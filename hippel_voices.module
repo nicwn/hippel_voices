@@ -3,3 +3,48 @@
 include_once('hippel_voices.features.inc');
 include_once('hippel_voices.block.inc');
 include_once('hippel_voices.form.inc');
+include_once('hippel_voices.vud.inc');
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function hippel_voices_nodeapi(&$node, $op, $teaser = NULL, $page = NULL) {
+  switch ($op) {
+    case 'load':
+      // The node is about to be loaded from the database. This hook can be used
+      // to load additional data at this time.
+      break;
+    case 'view':
+      // The node is about to be presented to the user. The module may change
+      // $node->body prior to presentation. This hook will be called after
+      // hook_view(), so the module may assume the node is filtered and now contains HTML.
+      if ($node->type == 'suggestion') {
+        $can_edit = user_access('use vote up/down on nodes');
+        $node->content['suggestion_vote_widget'] = array(
+          '#value' => theme('vud_widget', $node->nid, 'node', 'vote', 'suggestion', !$can_edit, $widget_message_code),
+          '#weight' => 10,
+          );
+      }
+      break;
+    case 'alter':
+      // The $node->content array has been rendered, so the node body or teaser
+      // is filtered and now contains HTML. This op should only be used when text
+      // substitution, filtering, or other raw text operations are necessary.
+      break;
+    case 'insert':
+      // The node is being created (inserted in the database).
+      break;
+    case 'update':
+      // The node is being updated.
+      break;
+    case 'validate':
+      // The user has just finished editing the node and is trying to preview or
+      // submit it. This hook can be used to check or even modify the node.
+      // Errors should be set with form_set_error().
+      break;
+    case 'delete':
+      // The node is being deleted.
+      break;
+  }
+}
+

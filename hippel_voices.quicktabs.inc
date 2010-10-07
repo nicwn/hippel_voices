@@ -42,13 +42,6 @@ function hippel_voices_quicktabs_default_quicktabs() {
       'weight' => '-97',
       'type' => 'block',
     ),
-    4 => array(
-      'bid' => 'hippel_voices_delta_hippel-voices-link',
-      'hide_title' => 1,
-      'title' => 'Link',
-      'weight' => '-96',
-      'type' => 'block',
-    ),
   );
   $quicktabs->style = 'Basic';
 
@@ -57,7 +50,7 @@ function hippel_voices_quicktabs_default_quicktabs() {
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'hippel_voices';
-  $quicktabs->ajax = 1;
+  $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = 0;
   $quicktabs->default_tab = FALSE;
   $quicktabs->title = 'What people are saying';
@@ -105,15 +98,6 @@ function hippel_voices_quicktabs_default_quicktabs() {
       'get_displays' => 'vdisp_4',
       'title' => 'Images',
       'weight' => '-96',
-      'type' => 'view',
-    ),
-    5 => array(
-      'vid' => 'hippel_idea_voices',
-      'display' => 'block_6',
-      'args' => '%1',
-      'get_displays' => 'vdisp_5',
-      'title' => 'Links',
-      'weight' => '-95',
       'type' => 'view',
     ),
   );
