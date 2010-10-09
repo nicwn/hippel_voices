@@ -1,0 +1,62 @@
+/* $Id$ */
+
+#block-hippel_idea-hippel-idea-vote h2.block-title {
+  display:none;
+  }
+
+#block-hippel_idea-hippel-idea-vote .vud-widget-hipfluence a {
+  float:left;
+  width:120px;
+  height:20px;
+  padding:10px 10px;
+  border:1px solid #eee;
+  color:#fff;
+  font-weight:normal;
+  font-size:14px;
+  background:#f86600;
+  text-decoration:none;
+  text-align:center;
+  }
+
+#block-hippel_idea-hippel-idea-vote .vud-widget-hipfluence a:active {
+  background:#333;
+  }
+
+#block-hippel_idea-hippel-idea-vote .vud-widget-hipfluence a.ctools-ajaxing {
+    padding-right:10px !important;
+    background-image:none;
+  }
+
+/* Progress bar blocks */
+#block-hippel_idea-hippel-idea-vote-result h2.block-title {
+  display:none;
+  }
+
+#block-hippel_idea-hippel-idea-vote-result.block {
+  padding:0px !important;
+  }
+
+div.bar {
+  background-color:#333;
+  margin:0px;
+  padding:0px;
+  height:40px;
+  width:640px;
+  float:left /*LTR*/;
+}
+
+div.foreground {
+  line-height:40px;
+  height:40px;
+  background-color:#0e7ce2;
+  width:660px;
+  float:left /*LTR*/;
+}
+
+span.total {
+  color:#fff;
+  width:560px;
+  float:left;
+  margin-left:40px;
+  font-size:20px;
+}
