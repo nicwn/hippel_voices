@@ -1,0 +1,101 @@
+/* $Id:suggestion.css,v 1.1.2.6 2010/03/12 08:06:45 marvil07 Exp $  */
+
+.vud-widget-suggestion {
+  text-align:center;
+  float:right;
+  clear:right;
+  padding:1px 2px 2px;
+  margin:2px 5px 0 0;
+  width:105px;
+  height:100%;
+}
+
+.unsigned-votes-suggestion {
+  font-weight:600;
+  font-size:1.4em;
+  padding:1px 2px 2px 3px;
+  margin:8px 0 0;
+}
+
+.vud-widget-suggestion .up-active,
+.vud-widget-suggestion .up-inactive,
+.vud-widget-suggestion .down-active,
+.vud-widget-suggestion .down-inactive {
+  margin: 0 45px;
+  display:block;
+  text-decoration:none;
+  width:15px;
+  height:9px;
+  background:url(arrows.png) 0 0 no-repeat;
+}
+
+.vud-widget-suggestion a.up-inactive,
+.vud-widget-suggestion a.down-inactive,
+.vud-widget-suggestion span.up-inactive,
+.vud-widget-suggestion span.down-inactive {
+  cursor:pointer;
+}
+
+.vud-widget-suggestion a.up-active,
+.vud-widget-suggestion a.down-active,
+.vud-widget-suggestion span.up-active,
+.vud-widget-suggestion span.down-active {
+  cursor:default;
+}
+
+.vud-widget-suggestion .up-active,
+.vud-widget-suggestion .up-inactive:hover {
+  background-position:-1px -1px;
+  float:left;
+}
+
+.vud-widget-suggestion .up-inactive {
+  background-position:-1px -10px;
+  float:left;
+}
+
+.vud-widget-suggestion .down-active,
+.vud-widget-suggestion .down-inactive:hover {
+  background-position:-18px -1px;
+  float:left;
+}
+
+.vud-widget-suggestion .down-inactive {
+  background-position:-18px -10px;
+  float:left;
+}
+
+.total-votes-suggestion {
+  font-size:.9em;
+  line-height:1.2em;
+  color:#494949;
+}
+
+.vud-term-table {
+  border:1px solid #D3E7F4;
+  float:right;
+  width:40em;
+  margin:0.5em 0 0.5em 1em;
+}
+
+.vud-widget-suggestion .ctools-ajaxing {
+  padding-right:0 !important;
+  margin: 0 45px;
+  display:block;
+  width:15px;
+  height:9px;
+  background-position:center;
+  float:left;
+}
+
+.vud-widget-suggestion .ctools-ajaxing.suggestion-click-up {
+  margin-right:3px;
+}
+
+.vud-widget-suggestion .ctools-ajaxing.suggestion-click-down {
+  margin-left:3px;
+}
+
+.vud-widget-suggestion .ctools-ajaxing span {
+  display:none;
+}
