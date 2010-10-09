@@ -50,7 +50,7 @@ function hippel_voices_quicktabs_default_quicktabs() {
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'hippel_voices';
-  $quicktabs->ajax = 0;
+  $quicktabs->ajax = 1;
   $quicktabs->hide_empty_tabs = 0;
   $quicktabs->default_tab = FALSE;
   $quicktabs->title = 'What people are saying';
