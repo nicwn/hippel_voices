@@ -87,15 +87,20 @@ function hippel_voices_views_default_views() {
       'value' => array(
         'comment' => 'comment',
         'image' => 'image',
-        'link' => 'link',
         'question' => 'question',
         'suggestion' => 'suggestion',
       ),
       'group' => '0',
-      'exposed' => FALSE,
+      'exposed' => TRUE,
       'expose' => array(
-        'operator' => FALSE,
+        'use_operator' => 0,
+        'operator' => 'type_op',
+        'identifier' => 'type',
         'label' => '',
+        'optional' => 1,
+        'single' => 1,
+        'remember' => 0,
+        'reduce' => 1,
       ),
       'id' => 'type',
       'table' => 'node',
@@ -137,233 +142,8 @@ function hippel_voices_views_default_views() {
     'links' => 1,
     'comments' => 1,
   ));
-  $handler = $view->new_display('block', 'All', 'block_1');
-  $handler->override_option('block_description', 'Hippel Voices (All)');
-  $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Questions', 'block_3');
-  $handler->override_option('filters', array(
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'question' => 'question',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => '1',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('empty', 'No one has asked a question about this idea.');
-  $handler->override_option('block_description', 'Hippel Voices (Questions)');
-  $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Suggestions', 'block_4');
-  $handler->override_option('relationships', array(
-    'votingapi_cache' => array(
-      'label' => 'Vote results',
-      'required' => 0,
-      'votingapi' => array(
-        'value_type' => 'points',
-        'tag' => 'vote',
-        'function' => 'positives',
-      ),
-      'id' => 'votingapi_cache',
-      'table' => 'node',
-      'field' => 'votingapi_cache',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('sorts', array(
-    'value' => array(
-      'order' => 'DESC',
-      'id' => 'value',
-      'table' => 'votingapi_cache',
-      'field' => 'value',
-      'relationship' => 'votingapi_cache',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-    ),
-  ));
-  $handler->override_option('filters', array(
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'suggestion' => 'suggestion',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => '1',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('empty', 'No one has made a suggestion for this idea.');
-  $handler->override_option('block_description', 'Hippel Voices (Suggestions)');
-  $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Images', 'block_5');
-  $handler->override_option('filters', array(
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'image' => 'image',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => '1',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('empty', 'No one has uploaded an image to this idea.');
-  $handler->override_option('block_description', 'Hippel Voices (Images)');
-  $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Links', 'block_6');
-  $handler->override_option('filters', array(
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'link' => 'link',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => '1',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('empty', 'No one has shared a link for this idea.');
-  $handler->override_option('block_description', 'Hippel Voices (Links)');
-  $handler->override_option('block_caching', -1);
-  $handler = $view->new_display('block', 'Comments', 'block_2');
-  $handler->override_option('filters', array(
-    'type' => array(
-      'operator' => 'in',
-      'value' => array(
-        'comment' => 'comment',
-      ),
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'type',
-      'table' => 'node',
-      'field' => 'type',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-    ),
-    'status' => array(
-      'operator' => '=',
-      'value' => '1',
-      'group' => '0',
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'id' => 'status',
-      'table' => 'node',
-      'field' => 'status',
-      'relationship' => 'none',
-    ),
-  ));
-  $handler->override_option('empty', 'No one has left a comment about this idea.');
-  $handler->override_option('block_description', 'Hippel Voices (Comments)');
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->override_option('block_description', 'What people are saying');
   $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;

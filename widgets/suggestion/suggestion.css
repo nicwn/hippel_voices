@@ -1,13 +1,11 @@
 /* $Id:suggestion.css,v 1.1.2.6 2010/03/12 08:06:45 marvil07 Exp $  */
 
 .vud-widget-suggestion {
+  float: right;
   text-align:center;
-  float:right;
-  clear:right;
   padding:1px 2px 2px;
   margin:2px 5px 0 0;
-  width:105px;
-  height:100%;
+  width:65px;
 }
 
 .unsigned-votes-suggestion {
@@ -21,7 +19,7 @@
 .vud-widget-suggestion .up-inactive,
 .vud-widget-suggestion .down-active,
 .vud-widget-suggestion .down-inactive {
-  margin: 0 45px;
+  margin: 0 25px;
   display:block;
   text-decoration:none;
   width:15px;
@@ -65,7 +63,16 @@
   float:left;
 }
 
-.total-votes-suggestion {
+div.unsigned-votes-suggestion .total {
+  color:#494949;
+  float: none;
+  font-size: 1em;
+  margin: 2px 0;
+}
+
+.total-votes-suggestion .total {
+  float:none;
+  margin: 2px 0;
   font-size:.9em;
   line-height:1.2em;
   color:#494949;
