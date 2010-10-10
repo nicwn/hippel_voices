@@ -485,5 +485,40 @@ function hippel_voices_strongarm() {
   );
 
   $export['node_options_suggestion'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_comment_pattern';
+  $strongarm->value = '';
+
+  $export['pathauto_node_comment_pattern'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_image_pattern';
+  $strongarm->value = '';
+
+  $export['pathauto_node_image_pattern'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_link_pattern';
+  $strongarm->value = '';
+
+  $export['pathauto_node_link_pattern'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_question_pattern';
+  $strongarm->value = '';
+
+  $export['pathauto_node_question_pattern'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_suggestion_pattern';
+  $strongarm->value = '';
+
+  $export['pathauto_node_suggestion_pattern'] = $strongarm;
   return $export;
 }
